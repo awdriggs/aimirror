@@ -1,0 +1,58 @@
+
+body {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  margin: 0;
+  background-color: #f0f0f0;
+  /* font-size: 5rem; */
+}
+
+#video-container {
+  /* position: relative; */
+  width: 640px; /* Adjust based on your video width */
+  
+  height: 480px; /* Adjust based on your video height */
+  /* width: 100%; */
+}
+
+#video1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#video_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none; /* Allow clicks to pass through to the video */
+}
+
+#upload {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  z-index: 100;
+}
+
+#result-container {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  /* Styles for screens 900px wide or less */
+  #page-wrapper {
+    /* background-color: blue; */
+    max-width: 100px;
+    position: relative;
+
+    #sidebar {
+      width: 30%;
+    }
+  }
+ }
+
