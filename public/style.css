@@ -12,7 +12,7 @@ body {
 #video-container {
   /* position: relative; */
   width: 640px; /* Adjust based on your video width */
-  
+
   height: 480px; /* Adjust based on your video height */
   /* width: 100%; */
 }
@@ -43,6 +43,15 @@ body {
   display: none;
 }
 
+#ai-image {
+  border: 1px solid pink;
+
+  img {
+    width: 300px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
 @media screen and (min-width: 900px) {
   /* Styles for screens 900px wide or less */
   #page-wrapper {
@@ -54,5 +63,5 @@ body {
       width: 30%;
     }
   }
- }
+}
 

@@ -4,6 +4,8 @@ let centerX, centerY, captureWidth, captureHeight;
 let canvas, ctx; //canvas and context
 let video;
 
+let caption; //global to hold the caption bro
+
 let test; //temp global for testing
 
 window.onload = () => {
@@ -157,7 +159,7 @@ function prepareImage(){
 
 async function postImage() {
   //var base_url = window.location.origin; //need to update this
-    const url = 'http://localhost:3000/api/data'; // Replace with your Node.js server endpoint
+    const url = 'http://localhost:3000/api/image'; // Replace with your Node.js server endpoint
     const data = prepareImage();  
 
     try {
@@ -178,16 +180,55 @@ async function postImage() {
         // Parse the JSON response
         const result = await response.json();
         console.log("Server Response:", result);
+
         // test = result;
-        
+        caption = result.caption; 
           // img.src = `data:image/png;base64, `; 
-        let img = document.createElement("img");
-        img.src = result.url
-        document.querySelector("body").append(img);
+        // let img = document.createElement("img");
+        // img.src = result.url
+        // document.querySelector("body").append(img);
 
     } catch (error) {
         // Handle errors
         console.error("Error during POST request:", error.message);
     }
 }
+
+
+async function postCaption() {
+  //var base_url = window.location.origin; //need to update this
+    const url = 'http://localhost:3000/api/caption'; // Replace with your Node.js server endpoint
+    const data = {"caption": caption}; //get the capition 
+
+    try {
+        // Make the POST request
+        const response = await fetch(url, {
+            method: 'POST', // Use POST method
+            headers: {
+                'Content-Type': 'application/json', // Specify JSON content type
+            },
+            body: JSON.stringify(data), // Convert data to JSON string
+        });
+
+        // Handle non-200 HTTP statuses
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Parse the JSON response
+        const result = await response.json();
+        console.log("Server Response:", result);
+        // test = result;
+       //result will be b4 image 
+          // img.src = `data:image/png;base64, `; 
+        let img = document.createElement("img");
+        img.src = result.url
+        document.querySelector("#ai-image").append(img);
+
+    } catch (error) {
+        // Handle errors
+        console.error("Error during POST request:", error.message);
+    }
+}
+
 

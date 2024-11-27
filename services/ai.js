@@ -13,11 +13,12 @@ const openai = new OpenAI({
 
 //do all your logic here?
 
-const getImage = async (prompt) => {
+export const getImage = async (caption) => {
   //get a dall-e image
+  console.log("getting image from caption");
   const image = await openai.images.generate({
     model: "dall-e-3",
-    prompt: prompt,
+    prompt: caption,
     n: 1,
     size: "1024x1024",
     response_format: "b64_json",
@@ -29,9 +30,9 @@ const getImage = async (prompt) => {
   return image.data[0].b64_json; 
 };
 
-const getCaption = async (img) => {
+export const getCaption = async (img) => {
   // async function main() {
-  console.log("getting caption");
+  console.log("getting caption from image");
   const response = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [
@@ -56,6 +57,7 @@ const getCaption = async (img) => {
   return response.choices[0].message.content;
 }
 
+//all in one shot
 // export const getCaption = async (img) => {
 //     const msg = await main(img);
 //     console.log("sending message");
@@ -68,9 +70,9 @@ const getCaption = async (img) => {
 // get an image from the caption
 // return the image to the user? base64?
 
-export const processImage = async (img) => {
-  let caption = await getCaption(img);
-  let image = await getImage(caption);
-  return image; //image is a b64 string only
-};
+// export const processImage = async (img) => {
+//   let caption = await getCaption(img);
+//   let image = await getImage(caption);
+//   return image; //image is a b64 string only
+// };
 
