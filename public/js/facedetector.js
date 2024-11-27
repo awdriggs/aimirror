@@ -49,7 +49,7 @@ async function run() {
 
 //face api needs a model for face detection, using tiny face detector 
 async function loadModels() {
-  const MODEL_URL = "./models"; // Path to your model directory
+  const MODEL_URL = "./js/models"; // Path to your model directory
   console.log("Loading face-api.js models...");
   await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
   // await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
