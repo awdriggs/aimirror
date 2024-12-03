@@ -6,6 +6,7 @@ body {
   margin: 2rem;
   background-color: #f0f0f0;
   font-family: "Noto Serif", serif;
+  box-sizing: border-box;
   /* font-size: 5rem; */
 
   p {
@@ -71,9 +72,9 @@ body {
   }
 
   button {
-    font-size: 3rem;
+    font-size: 0rem; /* hack! */
     border: none;
-    border-radius: 0;
+    border-radius: 50%;
     padding: 3rem;
     font-family: "Noto Serif", serif;
     color: #fff;
@@ -87,11 +88,42 @@ body {
     background-color: #C0B4B6;
   }
 
-  #reset {
-   position: fixed;
-   bottom: 2rem;
-   right: 2rem;
+  button svg {
+    width: 150px; /* or any size you prefer */
+    height: 150px;
+    fill: "#fff";
   }
+
+  .st0 {
+    fill: #fff;
+  }
+
+  #reset {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  #upload:not(:disabled) {
+    background-color: "orange";
+    animation: pulsate 1.5s infinite;
 }
 
+
+}
+
+@keyframes pulsate {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
 

@@ -107,6 +107,7 @@ function ellipsis(element, base) {
 
 //reset fucntion?
 function reset(){
+  console.log("reseting");
   //hide the reset button
   resetBtn.classList.add("hide");
   //unhide the capture button
