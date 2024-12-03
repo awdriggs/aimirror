@@ -29,10 +29,10 @@ function prepareImage(){
   return data;
 }
 
-async function postImage() {
+async function postImage(data) {
   //var base_url = window.location.origin; //need to update this
     const url = 'http://localhost:3000/api/image'; // Replace with your Node.js server endpoint
-    const data = prepareImage();  
+    // const data = prepareImage();  
 
     try {
         // Make the POST request
@@ -100,4 +100,6 @@ async function postCaption(caption) {
         console.error("Error during POST request:", error.message);
     }
 }
+
+
 

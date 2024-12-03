@@ -1,67 +1,97 @@
-
 body {
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   /* height: 100vh; */
-  margin: 0;
+  margin: 2rem;
   background-color: #f0f0f0;
+  font-family: "Noto Serif", serif;
   /* font-size: 5rem; */
-}
 
-#video-container {
-  /* position: relative; */
-  width: 640px; /* Adjust based on your video width */
-
-  height: 480px; /* Adjust based on your video height */
-  /* width: 100%; */
-}
-
-#video1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-#video_canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  pointer-events: none; /* Allow clicks to pass through to the video */
-}
-
-#upload {
-  position: absolute;
-  bottom: 100px;
-  right: 100px;
-  z-index: 100;
-}
-
-#result-container {
-  display: none;
-}
-
-#ai-image {
-  border: 1px solid pink;
-
-  img {
-    width: 300px; /* Set the width */
-    height: auto; /* Maintain aspect ratio */
+  p {
+    color: #CF2E29;
+    font-size: 2rem;
   }
-}
 
-@media screen and (min-width: 900px) {
-  /* Styles for screens 900px wide or less */
-  #page-wrapper {
-    /* background-color: blue; */
-    max-width: 100px;
-    position: relative;
+  #video-container {
+    /* position: relative; */
+    width: 640px; /* Adjust based on your video width */
+    height: 480px; /* Adjust based on your video height */
+    /* width: 100%; */
+    position: fixed;
 
-    #sidebar {
-      width: 30%;
+    #video1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #video_canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      pointer-events: none; /* Allow clicks to pass through to the video */
     }
   }
+
+  .hide {
+    display: none;
+  }
+
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  #result-container {
+    display: none;
+  }
+
+  #ai-image {
+    /* border: 1px solid pink; */
+    z-index: 0;
+
+    img {
+      /* width: 300px; /1* Set the width *1/ */
+      height: 500px;
+      /* height: auto; /1* Maintain aspect ratio *1/ */
+    }
+  }
+
+  #human-image {
+
+    img {
+      height: 500px;
+    }
+  }
+
+  button {
+    font-size: 3rem;
+    border: none;
+    border-radius: 0;
+    padding: 3rem;
+    font-family: "Noto Serif", serif;
+    color: #fff;
+    background-color: #CF2E29;
+    transition: background-color 500ms linear;
+  }
+
+  button:disabled,
+  button[disabled]{
+    /* color: #666666; */
+    background-color: #C0B4B6;
+  }
+
+  #reset {
+   position: fixed;
+   bottom: 2rem;
+   right: 2rem;
+  }
 }
+
 

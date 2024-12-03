@@ -92,7 +92,16 @@ async function detectFaces(video, canvas) {
       ctx.fillStyle = "red";
       ctx.fillRect (centerX -  captureWidth/2, centerY - captureHeight * 0.6, captureWidth, captureHeight)
 
+      btn.disabled = false;
+      // btn.classList.remove("hide");
+
+      status.innerText = "I see a face!";
       //set the upload button to active
+    } else {
+      btn.disabled = true;
+      // btn.classList.add("hide");
+
+      status.innerText = "I don't see a face";
     }
     // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
 

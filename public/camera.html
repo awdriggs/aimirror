@@ -2,35 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/face-api.min.js"></script><!-- import the face api library -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>
   </title>
 </head>
 <body>
   <div id="page-wrapper">
-
-
-    <section id="video-container">
+    <section id="video-container" class="hide">
       <video id="video1" autoplay="" muted playsinline></video>
       <canvas id="video_canvas">
       </canvas>
     </section>
 
-    <section id="result-container">
+      <p id="status">I don't see a face</p> 
+
+    <section id="result">
+      <p id="caption"></p>
+      <p id="process"></p>
     </section>
-    
-    <section id="ai-image">
+
+    <section id="human-image" class="center">
       <!-- image will be injected here -->
     </section>
-    
-    <button id="upload">Upload</button>
-  </div>
 
+    <section id="ai-image" class="center">
+      <!-- image will be injected here -->
+    </section>
+    <button id="upload" class="center" disabled>Capture</button>
+    <button id="reset" class="hide">Reset</button> 
+  </div>
   <!-- load all the script -->
-  <script src="js/call.js"></script>
-  <script src="js/facedetector.js"></script>
+  <script src="js/call.js"></script> 
+  <script src="js/facedetector.js"></script> 
   <script src="js/main.js"></script>
 </body>
 </html>
