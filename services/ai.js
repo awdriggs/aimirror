@@ -46,7 +46,7 @@ export const getCaption = async (img) => {
       {
         role: "user",
         content: [
-          { type: "text", text: "Describe what you see in this photo. Be as specific as possible. If there is a person describe what they look like, including their preceived gender, age and race. Begin your response with 'I see'" },
+          { type: "text", text: "Describe what you see in this photo. Be as specific as possible. If there is a person describe what they look like, including their preceived gender, age and race." },
           {
             type: "image_url",
             image_url: {
