@@ -31,7 +31,8 @@ function prepareImage(){
 
 async function postImage(data) {
   //var base_url = window.location.origin; //need to update this
-    const url = 'http://localhost:3000/api/image'; // Replace with your Node.js server endpoint
+    // const url = 'http://localhost:3000/api/image'; // Replace with your Node.js server endpoint
+    const url = `${window.location.origin}/api/image`; 
     // const data = prepareImage();  
 
     try {
@@ -69,7 +70,8 @@ async function postImage(data) {
 
 async function postCaption(caption) {
   //var base_url = window.location.origin; //need to update this
-    const url = 'http://localhost:3000/api/caption'; // Replace with your Node.js server endpoint
+    // const url = 'http://localhost:3000/api/caption'; // Replace with your Node.js server endpoint
+    const url = `${window.location.origin}/api/caption`; 
     const data = {"caption": caption}; //get the capition 
 
     try {
