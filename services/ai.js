@@ -32,7 +32,6 @@ export const getImage = async (caption) => {
     })
 
     // console.log(image);
-    console.log(image);
     return image.data[0].b64_json;
   }
 };
