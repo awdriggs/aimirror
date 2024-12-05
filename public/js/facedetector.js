@@ -89,7 +89,7 @@ async function detectFaces(video, canvas) {
       captureHeight = firstFace.box.height * 2;
 
       //for testing, draws a red box over the face
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "#CF2E29";
       ctx.fillRect (centerX -  captureWidth/2, centerY - captureHeight * 0.6, captureWidth, captureHeight)
 
       btn.disabled = false;

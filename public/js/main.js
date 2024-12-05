@@ -1,10 +1,10 @@
 //global variables, used by all js files
-let btn;
+let btn, resetBtn, infoBtn;
 let centerX, centerY, captureWidth, captureHeight;
 let canvas, ctx; //canvas and context
 let video;
 let caption; //global to hold the caption bro
-let status, processEl, captionEl;
+let status, processEl, captionEl, uploadEl;
 let count = 0; //for the animation, wish this wasn't a global though
 
 window.onload = () => {
@@ -13,6 +13,7 @@ window.onload = () => {
   //get the upload button
   btn = document.querySelector("#upload");
   resetBtn = document.querySelector("#reset");
+  infoBtn = document.querySelector("#info");
   // btn.classList.add("hide");
 
   //add event listener to the button
@@ -22,6 +23,7 @@ window.onload = () => {
   status = document.querySelector("#status");
   processEl = document.querySelector("#process");
   captionEl = document.querySelector("#caption");
+  uploadEl = document.querySelector("#upload-wrapper");
 
   canvas = document.getElementById("video_canvas");
   ctx = canvas.getContext("2d");
@@ -39,7 +41,8 @@ window.onload = () => {
 
 async function generate() {
   //change the button to loading
-  btn.classList.add("hide");
+  uploadEl.classList.add("hide");
+  status.classList.add("hide");
   
   console.log("getting a caption");
   // process.innerText = "Analyzing..."
@@ -50,13 +53,15 @@ async function generate() {
   //show the image
   let img = document.createElement("img");
   img.src = image.image;
-  document.querySelector("#human-image").append(img);
+  let imageEl = document.querySelector("#human-image");
+  imageEl.append(img);
 
 
   let caption = await postImage(image);
 
   clearInterval(processInterval); //kill caption interval 
 
+  imageEl.classList.add("fade");
   captionEl.innerText = caption; 
   
   // processEl.innerHTML = "Generating an image..."
@@ -79,14 +84,14 @@ async function generate() {
   //wait a few seconds, then dispaly the button again
     // btn.classList.remove("hide");
   setTimeout(()=> {
-    resetBtn.classList.remove("hide") 
+    resetBtn.classList.remove("hide"); 
+    infoBtn.classList.remove("hide");
   }, 3000)
 }
 
 // var interval = setInterval(ellipsis, 500, el, baseword);
 
 // clearInterval(refreshIntervalId);
-
 function ellipsis(element, base) {
   let text = base;
 
@@ -104,19 +109,21 @@ function ellipsis(element, base) {
   // document.title = text; //haha
 }
 
-
-//reset fucntion?
 function reset(){
   console.log("reseting");
   //hide the reset button
   resetBtn.classList.add("hide");
+  infoBtn.classList.add("hide");
   //unhide the capture button
-  btn.classList.remove("hide");
+  uploadEl.classList.remove("hide");
+  status.classList.remove("hide");
   //clear the contentes of human-img, ai-img, caption, and process
   captionEl.innerText = "";
   processEl.innerText = "";
   
   document.querySelector("#ai-image").innerHTML = "";
-  document.querySelector("#human-image").innerHTML = "";
+  let humanEl = document.querySelector("#human-image")
+  humanEl.innerHTML = "";
+  humanEl.classList.remove("fade");
 }
 //save function?

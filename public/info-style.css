@@ -1,0 +1,36 @@
+body {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  margin: 2rem;
+  background-color: #f0f0f0;
+  font-family: "Noto Serif", serif;
+  box-sizing: border-box;
+  padding: 0px 5rem;
+  /* font-size: 5rem; */
+
+  font-size: 2rem;
+  color: #CF2E29;
+
+  #back {
+    /* display: inline-block; */
+    /* padding: 2rem; */
+    border-radius: 50%;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  #flow p{
+    text-align:center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+

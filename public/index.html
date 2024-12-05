@@ -19,28 +19,29 @@
       </canvas>
     </section>
 
-      <p id="status">I don't see a face</p> 
-
-    <section id="result">
-      <p id="caption"></p>
-      <p id="process">
-        Press the button to see yourself as AI sees you.
-      </p>
-    </section>
+    <p id="status">I don't see a face</p>
 
     <section id="human-image" class="center">
       <!-- image will be injected here -->
     </section>
 
+    <section id="result">
+      <p id="caption" class="center">
+      </p>
+
+      <p id="process"><!-- Press the button to see yourself as AI sees you. -->
+      </p>
+    </section>
+
     <section id="ai-image" class="center">
       <!-- image will be injected here -->
     </section>
-    <button id="upload" class="center" disabled><img src="svgs/sparkle.svg" alt="spark" />
-    </button>
 
-    <button id="reset" class="hide"><img src="svgs/refresh.svg">
-    </button> 
-    
+    <section id="upload-wrapper" class="center">
+      <button id="upload" disabled><img src="svgs/sparkle.svg" alt="spark"></button>
+      <p id="directions">Press the button to see yourself as AI sees you.</p>
+    </section>
+    <button id="reset" class="hide"><img src="svgs/refresh.svg"></button> <a id="info" class="hide" href="info.html"><img src="svgs/info.svg"></a>
   </div>
   <!-- load all the script -->
   <script src="js/call.js"></script> 
