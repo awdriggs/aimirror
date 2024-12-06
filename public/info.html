@@ -11,27 +11,23 @@
   </title>
 </head>
 <body>
-  <a href="/" id="back"><img src="svgs/back.svg"></a> 
+  <a href="/" id="back"><img src="svgs/back.svg"></a>
   <div id="page-wrapper">
     <h1>Information</h1>
 
-    <p>AI Photobooth is like a digital mirror, reflecting how Artifical Intelligence models “see” us.</p>
+    <p>AI Photobooth is like a digital mirror, reflecting how Artificial Intelligence models “see” us.</p>
 
     <section id="flow">
       <h2>How it works</h2>
 
-      <p>A face is detected by an AI! You can click the button to capture your likeness</p>
-
-      <img src="imgs/capture.png">
-      <img src="svgs/arrow.svg">
-
+      <p>A face is detected by an AI! You can click the button to capture your likeness.</p>
+      <img src="imgs/capture.png"> <img src="svgs/arrow.svg">
       <p>The face is isolated.</p>
-      <img src="imgs/boundingbox.png">
-      <img src="svgs/arrow.svg">
-      <p>This image is sent to an LLM for a caption.</p>
-
+      <img src="imgs/boundingbox.png"> <img src="svgs/arrow.svg">
+      <p>This image is sent to an Large Language Model for a caption.</p>
       <img src="svgs/arrow.svg">
       <p>A caption is returned...</p>
+
       <p>"The photo shows a person with medium-length, light brown hair. They are wearing a brown sweater over a white shirt. The background includes a window with a partially visible white frame and a light-colored wall. The lighting in the room appears soft and indoor, and there is a poster or piece of art visible on the wall behind them."</p>
       <img src="svgs/arrow.svg">
       <p>The caption is sent as a request to an image generator.</p>
@@ -40,7 +36,22 @@
       <img src="imgs/return.png">
     </section>
 
+    <section id="purpose">
+      <h2>Purpose</h2>
 
+      <p>This project arose as I was experimenting with LLMs as a creative collaborator through some <a href="https://current.ecuad.ca/what-is-critical-making&quot;">critical making</a> experiments. I was curious how AI “sees” us, and whether this would reveal any biases or limitations of the models.</p>
+      <p>Most often the models will return  an “attractive” likeness, often reduced to some standard stereotypes i.e. male = facial hair, long hair = female.</p>
+      <p>What is most interesting is when the model is unsure or struggles in some way. For example, if the caption expresses the inability to determine some salient features of a person, the image generator will respond with a blank faced person rather than make assumptions.</p>
+      <img src="imgs/noface.png">
+    </section>
+
+    <section id="link">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://github.com/awdriggs/aimirror">Project Github</a></li>
+        <li><a href="https://justadudewhohacks.github.io/face-api.js/docs/index.html">FaceDetection API</a> with <a href="https://justadudewhohacks.github.io/face-api.js/docs/classes/tinyfacedetector.html">TinyFaceDetector model</a></li>
+        <li><a href="https://platform.openai.com/docs/overview">OpenAI Api</a> for captioning and image generation</li>
+    </section>
   </div>
 </body>
 </html>

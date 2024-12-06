@@ -31,6 +31,14 @@ body {
     margin: 0 auto;
   }
 
+  a, a:visited {
+    color: #CF2E29;
+  }
+
+  a:hover {
+    color: #C0B4B6
+  }
+
 }
 
 
